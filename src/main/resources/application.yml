@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+camel:
+  service:
+    lra.enabled: true
+  lra:
+    enabled: true
+    coordinator-url: http://localhost:8081
+    coordinator-context-path: /lra-coordinator
+#    replace host with your ip
+    local-participant-url: http://10.2.134.194:8080/api
+  servlet:
+    mapping:
+      enabled: true
+      context-path: /api/*
+
+order:
+  saga:
+    thread:
+      cap: 50
+logging:
+  level:
+    ROOT: INFO
